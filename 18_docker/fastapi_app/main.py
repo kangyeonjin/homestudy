@@ -16,6 +16,29 @@ host = "https://buzz-conversations-zi2m3tr.svc.aped-4627-b74a.pinecone.io"
 
 index = pinecone.Index("quickstart", host=host)
 
+# 생성
+# pinecone.create_index("prac01", dimension=8, metric="euclidean")
+# print(pinecone.describe_index("prac01"))
+
+# idx = pinecone.Index("prac01")
+
+# 데이터 삽입해보기
+# idx.upsert(
+#     vectors=[
+#         {"id":"comdalin", "values":[0.1, 0.5, 0.4, 0.11, -0.5, 200.0, 0.0, -200.0]},
+#         {"id":"quitar", "values":[1.0, 800.1, -.1, 11., 5.0, 0.2, 8.0, -200.02]}
+#     ]
+# )
+
+#검색해보기
+# result = pinecone.Index(
+#     vector=[],
+#     top_k=1,
+#     include_values=True
+# )
+
+# print(result)
+
 @app.get("/")
 def read_root():
     return {"message": "FastAPI is working!"}
